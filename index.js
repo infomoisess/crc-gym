@@ -4,6 +4,7 @@ import connectDB from "./utils/db.js";
 import Usuarios from "./models/Usuario.js";
 import Plan from "./models/Plan.js";
 import cors from "cors";
+import Profesor from "./models/Profesor.js";
 
 const app = express();
 app.use(express.json());
@@ -55,12 +56,12 @@ app.get("/planes", async (req, res) => {
 
 // Ruta para obtener la lista de profesores
 app.get("/staff", async (req, res) => {
-  Staff.find()
-    .then((profesores) => {
-      if (!profesores) {
+  Profesor.find()
+    .then((staff) => {
+      if (!staff) {
         res.status(404).send("Profesor no encontrado");
       }
-      res.send(profesores);
+      res.send(staff);
     })
     .catch((err) => {
       console.log(err);
