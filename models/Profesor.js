@@ -11,7 +11,7 @@ let profesorSchema = new Schema({
   imagen: { type: String, required: true, unique: true },
 });
 
-planSchema.plugin(mongooseUniqueValidator);
-let Profesor = mongoose.model("Staff", profesorSchema);
+profesorSchema.plugin(mongooseUniqueValidator);
+let Profesor = mongoose.model("Profesores", profesorSchema);
 
 export default Profesor;

@@ -55,13 +55,13 @@ app.get("/planes", async (req, res) => {
 });
 
 // Ruta para obtener la lista de profesores
-app.get("/staff", async (req, res) => {
+app.get("/profesores", async (req, res) => {
   Profesor.find()
-    .then((staff) => {
-      if (!staff) {
-        res.status(404).send("Profesor no encontrado");
+    .then((profesores) => {
+      if (!profesores) {
+        res.status(404).send("Profesor no encontrad");
       }
-      res.send(staff);
+      res.send(profesores);
     })
     .catch((err) => {
       console.log(err);
