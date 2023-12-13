@@ -52,3 +52,18 @@ app.get("/planes", async (req, res) => {
       res.status(500).send("Internal server error");
     });
 });
+
+// Ruta para obtener la lista de profesores
+app.get("/staff", async (req, res) => {
+  Staff.find()
+    .then((profesores) => {
+      if (!profesores) {
+        res.status(404).send("Profesor no encontrado");
+      }
+      res.send(profesores);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send("Internal server error");
+    });
+});
