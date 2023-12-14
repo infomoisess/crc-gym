@@ -8,6 +8,7 @@ let planSchema = new Schema({
   nombre: { type: String, required: true, unique: true },
   precio: { type: Number, required: true },
   descripcion: { type: String, required: true },
+  color: { type: String, required: true },
 });
 
 planSchema.plugin(mongooseUniqueValidator);
